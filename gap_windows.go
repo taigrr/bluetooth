@@ -172,6 +172,8 @@ func (a *Adapter) StopScan() error {
 
 // Device is a connection to a remote peripheral.
 type Device struct {
+	Address Address // the MAC address of the device
+
 	device  *bluetooth.BluetoothLEDevice
 	session *genericattributeprofile.GattSession
 }
@@ -238,7 +240,7 @@ func (a *Adapter) Connect(address Address, params ConnectionParams) (Device, err
 		return Device{}, err
 	}
 
-	return Device{bleDevice, newSession}, nil
+	return Device{address, bleDevice, newSession}, nil
 }
 
 // Disconnect from the BLE device. This method is non-blocking and does not
