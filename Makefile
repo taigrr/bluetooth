@@ -58,6 +58,8 @@ smoketest-windows:
 	GOOS=windows go build -o /tmp/go-build-discard ./examples/scanner
 	GOOS=windows go build -o /tmp/go-build-discard ./examples/discover
 	GOOS=windows go build -o /tmp/go-build-discard ./examples/heartrate-monitor
+	GOOS=windows go build -o /tmp/go-build-discard ./examples/advertisement
+	GOOS=windows go build -o /tmp/go-build-discard ./examples/heartrate
 
 smoketest-macos:
 	# Test on macos.

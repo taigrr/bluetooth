@@ -1,6 +1,7 @@
 package bluetooth
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/go-ole/go-ole"
@@ -13,6 +14,8 @@ type Adapter struct {
 	watcher *advertisement.BluetoothLEAdvertisementWatcher
 
 	connectHandler func(device Device, connected bool)
+
+	defaultAdvertisement *Advertisement
 }
 
 // DefaultAdapter is the default adapter on the system.
@@ -55,4 +58,9 @@ func awaitAsyncOperation(asyncOperation *foundation.IAsyncOperation, genericPara
 		return fmt.Errorf("async operation failed with status %d", status)
 	}
 	return nil
+}
+
+func (a *Adapter) Address() (MACAddress, error) {
+	// TODO: get mac address
+	return MACAddress{}, errors.New("not implemented")
 }
