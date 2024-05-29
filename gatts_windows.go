@@ -216,6 +216,7 @@ func (a *Adapter) AddService(s *Service) error {
 			char.Handle.value = char.Value
 			char.Handle.valueMtx = &sync.Mutex{}
 			char.Handle.flags = char.Flags
+			char.Handle.writeEvent = char.WriteEvent
 			goChars[uuid] = char.Handle
 		}
 	}
