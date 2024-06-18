@@ -1,3 +1,23 @@
+0.10.0
+---
+
+* **core**
+  - gap: fix ServiceDataElement.UUID comment
+* **docs**
+  - add mention of support for rp2040-W to README
+  - Improve documentation of RSSI Fixes https://github.com/tinygo-org/bluetooth/issues/272
+* **hci**
+  - cyw43439: HCI implementation
+  - refactor to separate HCI transport implementation from interface to not always assume UART.
+  - update for cyw43439 HCI functionality
+* **windows**
+  - Add Address field to Windows Device struct
+  - Winrt full support (#266)
+  - winrt-go: bump to latest
+  - assign char handle write event (#274)
+* **test**
+  - add hci_uart based implementation to smoke tests
+
 0.9.0
 ---
 
